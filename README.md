@@ -1,66 +1,273 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Inventory System
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## 🚀 About the Project
 
-## About Laravel
+ Inventory Management System using **Laravel**, designed to streamline stock tracking, reduce errors, and enhance operational efficiency. This system enables businesses to efficiently manage product inventory, monitor stock levels, and automate key inventory processes. 
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+---
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## 🛠️ Tech Stack
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- **Frontend:** Laravel Blade
+- **Backend:** PHP
+- **Database:** MySQL (MariaDB can be used)
+- **Deployment:** VPS with Nginx or Apache
 
-## Learning Laravel
+---
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## ✨ Features
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+- Fully responsive design with Bootstrap 5
+- High data accuracy with trigger and functions
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+---
 
-## Laravel Sponsors
+## 📁 Project Structure
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+```sh
+inventory-system/
+├── app
+│   ├── Http
+│   │   └── Controllers
+│   │       ├── control_barang.php
+│   │       ├── control_dashboard.php
+│   │       ├── control_kategori.php
+│   │       ├── control_keluar.php
+│   │       ├── control_masuk.php
+│   │       └── Controller.php
+│   ├── Models
+│   │   ├── model_barang.php
+│   │   ├── model_kategori.php
+│   │   ├── model_keluar.php
+│   │   ├── model_masuk.php
+│   │   └── User.php
+│   └── Providers
+│       └── AppServiceProvider.php
+├── bootstrap/
+├── config/
+├── database
+│   ├── factories
+│   │   └── UserFactory.php
+│   ├── migrations
+│   │   ├── 0001_01_01_000000_create_users_table.php
+│   │   ├── 0001_01_01_000001_create_cache_table.php
+│   │   ├── 0001_01_01_000002_create_jobs_table.php
+│   │   ├── 2025_01_02_101232_tabel_kategori.php
+│   │   ├── 2025_02_16_113038_create_barang_table.php
+│   │   ├── 2025_02_16_113054_create_barang_masuk_table.php
+│   │   ├── 2025_02_16_113103_create_barang_keluar_table.php
+│   │   ├── 2025_07_03_045347_trigger_masuk.php
+│   │   ├── 2025_07_03_045351_trigger_keluar.php
+│   │   └── 2025_07_03_045816_function_barang.php
+│   ├── seeders
+│   │   └── DatabaseSeeder.php
+│   └── .gitignore
+├── public/
+│   ├── .htaccess
+│   ├── favicon.ico
+│   ├── index.php
+│   └── robots.txt
+├── resources
+│   ├── css
+│   │   └── app.css
+│   ├── js
+│   │   ├── app.js
+│   │   └── bootstrap.js
+│   └── views
+│       └── frontend
+│           ├── barang
+│           │   ├── create.blade.php
+│           │   ├── edit.blade.php
+│           │   ├── index.blade.php
+│           │   └── show.blade.php
+│           ├── dashboard
+│           │   └── index.blade.php
+│           ├── kategori
+│           │   ├── create.blade.php
+│           │   ├── delete.blade.php
+│           │   ├── edit.blade.php
+│           │   ├── index.blade.php
+│           │   └── show.blade.php
+│           ├── keluar
+│           │   ├── create.blade.php
+│           │   ├── edit.blade.php
+│           │   ├── index.blade.php
+│           │   └── show.blade.php
+│           ├── layout
+│           │   └── layout-crud.blade.php
+│           └── masuk
+│               ├── create.blade.php
+│               ├── edit.blade.php
+│               ├── index.blade.php
+│               └── show.blade.php
+├── routes
+│   ├── console.php
+│   └── web.php
+├── .editorconfig
+├── .env.example
+├── .gitattributes
+├── .gitignore
+├── artisan
+├── composer.json
+├── composer.lock
+├── package.json
+├── phpunit.xml
+├── postcss.config.js
+├── README.md
+├── tailwind.config.js
+└── vite.config.js```
 
-### Premium Partners
+## 📦 Installation & Setup
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+To run this project locally, follow these steps:
 
-## Contributing
+1. **Clone the repository:**
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+   ```sh
+   git clone https://github.com/genta-bahana-nagari/inventory-system.git
+   cd inventory-system
+   ```
 
-## Code of Conduct
+2. **Set environment:**
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+   ```sh
+   cp .env.example .env
+   ```
 
-## Security Vulnerabilities
+   You will see this configuration and adjust them with your database configuration:
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+   ```sh
+    DB_CONNECTION=sqlite
+    # DB_HOST=127.0.0.1
+    # DB_PORT=3306
+    # DB_DATABASE=laravel
+    # DB_USERNAME=root
+    # DB_PASSWORD=
+   ```
 
-## License
+3. **Install dependencies:**
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+   ```sh
+   composer install
+   ```
+
+4. **Migration, Key Generate, and Storage Link:**
+
+   ```sh
+   php artisan migrate
+   php artisan key:generate
+   php artisan storage:link # because I use image field in the migrations.
+   ```
+
+5. **Run the development server:**
+
+   ```sh
+   npm run dev
+   ```
+
+6. Open http://localhost:8000 in your browser.
+
+---
+
+## 🚀 Deployment
+
+To deploy the project, you can use VPS with one of these services:
+
+- **Nginx:** you can configure this way:
+   ```sh
+    server {
+        listen 80;
+        listen [::]:80;
+        server_name your_domain_or_ip;
+        root /var/www/your_project_directory/public;
+        index index.php index.html index.htm;
+
+        # Security Headers
+        add_header X-Frame-Options "SAMEORIGIN" always;
+        add_header X-XSS-Protection "1; mode=block" always;
+        add_header X-Content-Type-Options "nosniff" always;
+        add_header Referrer-Policy "no-referrer-when-downgrade" always;
+        add_header Content-Security-Policy "default-src 'self' http: https: data: blob;" always;
+
+        # Gzip Compression
+        gzip on;
+        gzip_vary on;
+        gzip_min_length 1024;
+        gzip_proxied expired no-cache no-store private must-revalidate auth;
+        gzip_types text/plain text/css text/xml text/javascript application/x-javascript application/xml+rss;
+
+        # Handle Laravel Routes
+        location / {
+            try_files $uri $uri/ /index.php?$query_string;
+        }
+
+        # PHP Processing
+        location ~ \.php$ {
+            fastcgi_pass unix:/var/run/php/php8.2-fpm.sock;
+            fastcgi_param SCRIPT_FILENAME $realpath_root$fastcgi_script_name;
+            include fastcgi_params;
+            fastcgi_hide_header X-Powered-By;
+        }
+
+        # Static Files Caching
+        location ~* \.(jpg|jpeg|png|gif|ico|css|js)$ {
+            expires 1y;
+            add_header Cache-Control "public, immutable";
+        }
+
+        # Security: Deny access to hidden files
+        location ~ /\. {
+            deny all;
+        }
+
+        # Security: Deny access to sensitive files
+        location ~ /(\.env|\.git|composer\.(json|lock)|package\.json) {
+            deny all;
+        }
+
+        # Favicon and robots.txt
+        location = /favicon.ico { access_log off; log_not_found off; }
+        location = /robots.txt  { access_log off; log_not_found off; }
+    }
+   ```
+- **Apache:** you can configure this way:
+   ```sh
+   <VirtualHost *:80>
+
+        ServerAdmin admin@testapp.local
+        ServerName testapp.local
+        DocumentRoot /var/www/your_project_directory/public
+
+        <Directory />
+                Options FollowSymLinks
+                AllowOverride None
+        </Directory>
+        <Directory /var/www/your_project_directory>
+                AllowOverride All
+        </Directory>
+
+        ErrorLog ${APACHE_LOG_DIR}/error.log
+        CustomLog ${APACHE_LOG_DIR}/access.log combined
+
+    </VirtualHost>
+   ```
+
+---
+
+## 👤 Author
+
+- **Genta Bahana Nagari** – [LinkedIn](https://www.linkedin.com/in/genta-bahana-nagari/) | [GitHub](https://github.com/genta-bahana-nagari)
+
+---
+
+## 🌟 Show Your Support
+
+If you find this script helpful, feel free to ⭐ the repository and share it with others!
+
+---
+
+## 📜 License
+
+This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) file for details.
+
+---
