@@ -16,11 +16,11 @@ return new class extends Migration
 
 
             CREATE TRIGGER trigger_keluar
-	    AFTER INSERT ON barang_keluar FOR EACH ROW
- 	    begin
-  		UPDATE barang
-  		SET barang.stok = barang.stok - NEW.qty_keluar
-  		WHERE barang.id=NEW.barang_id;
+            AFTER INSERT ON barang_keluar FOR EACH ROW
+            begin
+                UPDATE barang
+                SET barang.stok = barang.stok - NEW.qty_keluar
+                WHERE barang.id=NEW.barang_id;
             END;
 
 
